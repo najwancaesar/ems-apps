@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - EMS PT. Local Central Digital</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="app-header">
+        <div>
+            <p class="eyebrow">Admin Area</p>
+            <h1>Admin Dashboard - EMS PT. LOCAL CENTRAL DIGITAL</h1>
+        </div>
+        <div class="header-actions">
+            <span id="adminUsername" class="user-pill"></span>
+            <button type="button" class="secondary-button" onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <main class="dashboard-layout">
+        <section class="panel employee-form-panel">
+            <div class="section-title">
+                <h2 id="formTitle">Tambah Employee</h2>
+                <button id="cancelEditButton" type="button" class="ghost-button hidden">Batal Edit</button>
+            </div>
+
+            <form id="employeeForm" class="grid-form">
+                <input type="hidden" id="employeeId">
+
+                <label for="employeeCode">Employee Code</label>
+                <input id="employeeCode" name="employeeCode" type="text" required>
+
+                <label for="fullName">Full Name</label>
+                <input id="fullName" name="fullName" type="text" required>
+
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required>
+
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="text">
+
+                <label for="gender">Gender</label>
+                <input id="gender" name="gender" type="text" placeholder="MALE / FEMALE">
+
+                <label for="birthDate">Birth Date</label>
+                <input id="birthDate" name="birthDate" type="date">
+
+                <label for="hireDate">Hire Date</label>
+                <input id="hireDate" name="hireDate" type="date">
+
+                <label for="employmentStatus">Employment Status</label>
+                <select id="employmentStatus" name="employmentStatus">
+                    <option value="ACTIVE">ACTIVE</option>
+                    <option value="INACTIVE">INACTIVE</option>
+                    <option value="CONTRACT">CONTRACT</option>
+                    <option value="PROBATION">PROBATION</option>
+                </select>
+
+                <label for="departmentId">Department</label>
+                <select id="departmentId" name="departmentId" required></select>
+
+                <label for="positionId">Position</label>
+                <select id="positionId" name="positionId" required></select>
+
+                <label for="address" class="span-2">Address</label>
+                <textarea id="address" name="address" rows="3" class="span-2"></textarea>
+
+                <button id="saveEmployeeButton" type="submit" class="primary-button span-2">Simpan Employee</button>
+            </form>
+
+            <div id="adminMessage" class="message" aria-live="polite"></div>
+        </section>
+
+        <section class="panel employee-table-panel">
+            <div class="section-title">
+                <h2>Employees</h2>
+                <button id="refreshEmployeesButton" type="button" class="secondary-button">Refresh</button>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Department</th>
+                            <th>Position</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employeeTableBody">
+                        <tr>
+                            <td colspan="7" class="empty-cell">Memuat data...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

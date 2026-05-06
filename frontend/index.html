@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - EMS PT. Local Central Digital</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+    <main class="login-shell">
+        <section class="brand-panel">
+            <div class="brand-mark">LCD</div>
+            <p class="eyebrow">Employee Management System</p>
+            <h1>PT. LOCAL CENTRAL DIGITAL</h1>
+            <p class="company-description">
+                Perusahaan teknologi yang bergerak di bidang konsultasi website, pemasangan WiFi,
+                provider internet, jaringan, dan solusi digital.
+            </p>
+        </section>
+
+        <section class="login-card" aria-labelledby="loginTitle">
+            <h2 id="loginTitle">Masuk ke EMS</h2>
+            <p class="muted">Gunakan akun yang sudah tersedia untuk masuk ke dashboard.</p>
+
+            <form id="loginForm" class="form-stack">
+                <label for="username">Username</label>
+                <input id="username" name="username" type="text" autocomplete="username" required>
+
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" autocomplete="current-password" required>
+
+                <button type="submit" class="primary-button">Login</button>
+            </form>
+
+            <div id="loginMessage" class="message" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

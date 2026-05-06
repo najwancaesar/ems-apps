@@ -1,0 +1,373 @@
+:root {
+    --bg: #eef3f7;
+    --surface: #ffffff;
+    --surface-soft: #f7fafc;
+    --text: #17212b;
+    --muted: #66798a;
+    --line: #d9e2ea;
+    --primary: #0f766e;
+    --primary-dark: #115e59;
+    --accent: #f59e0b;
+    --danger: #b42318;
+    --success: #16723a;
+    --shadow: 0 18px 55px rgba(31, 45, 61, 0.14);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+}
+
+h1,
+h2,
+p {
+    margin-top: 0;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+.login-page {
+    display: grid;
+    place-items: center;
+    padding: 32px;
+    background:
+        linear-gradient(135deg, rgba(15, 118, 110, 0.12), rgba(245, 158, 11, 0.10)),
+        var(--bg);
+}
+
+.login-shell {
+    width: min(980px, 100%);
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.brand-panel,
+.login-card,
+.panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.brand-panel {
+    padding: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-card {
+    padding: 34px;
+}
+
+.brand-mark {
+    width: 72px;
+    height: 72px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    background: var(--primary);
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.brand-mark.small {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
+}
+
+.eyebrow {
+    margin-bottom: 8px;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.company-description,
+.muted {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.form-stack,
+.grid-form {
+    display: grid;
+    gap: 12px;
+}
+
+label {
+    color: #2a3b4a;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 11px 12px;
+    background: #ffffff;
+    color: var(--text);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid rgba(15, 118, 110, 0.18);
+    border-color: var(--primary);
+}
+
+.primary-button,
+.secondary-button,
+.ghost-button,
+.danger-button {
+    min-height: 40px;
+    border: 0;
+    border-radius: 6px;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.primary-button {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.primary-button:hover {
+    background: var(--primary-dark);
+}
+
+.secondary-button {
+    background: #e6eef4;
+    color: #183247;
+}
+
+.ghost-button {
+    background: transparent;
+    color: var(--primary);
+}
+
+.danger-button {
+    background: #fee4e2;
+    color: var(--danger);
+}
+
+.message {
+    min-height: 22px;
+    margin-top: 14px;
+    font-size: 14px;
+}
+
+.message.error {
+    color: var(--danger);
+}
+
+.message.success {
+    color: var(--success);
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: center;
+    padding: 22px 28px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+}
+
+.app-header h1 {
+    margin-bottom: 0;
+    font-size: 22px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-pill {
+    padding: 8px 10px;
+    border-radius: 999px;
+    background: var(--surface-soft);
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: minmax(320px, 420px) minmax(0, 1fr);
+    gap: 22px;
+    padding: 24px;
+}
+
+.panel {
+    padding: 22px;
+    box-shadow: none;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.section-title h2 {
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+.grid-form {
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-form .span-2 {
+    grid-column: span 2;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+th,
+td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+th {
+    background: var(--surface-soft);
+    font-size: 13px;
+    color: #304455;
+}
+
+td {
+    font-size: 14px;
+}
+
+.table-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: #e6f4ef;
+    color: var(--success);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.empty-cell {
+    color: var(--muted);
+    text-align: center;
+}
+
+.simple-dashboard {
+    min-height: calc(100vh - 82px);
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.profile-panel {
+    width: min(560px, 100%);
+}
+
+.profile-list {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 12px 18px;
+    margin: 22px 0 0;
+}
+
+.profile-list dt {
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.profile-list dd {
+    margin: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 980px) {
+    .login-shell,
+    .dashboard-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .app-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 640px) {
+    .login-page,
+    .dashboard-layout,
+    .simple-dashboard {
+        padding: 16px;
+    }
+
+    .brand-panel,
+    .login-card,
+    .panel {
+        padding: 20px;
+    }
+
+    .grid-form {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-form .span-2 {
+        grid-column: span 1;
+    }
+
+    .profile-list {
+        grid-template-columns: 1fr;
+    }
+}
